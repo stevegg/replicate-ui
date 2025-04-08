@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Replication</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Base responsive styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Define base font sizes for different screen sizes */
+            font-size: 16px;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Ensure all images are responsive */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Removes bottom spacing */
+        }
+        
+        /* Ensure inputs and buttons are touch-friendly */
+        input, button, select, textarea, a {
+            font-size: 16px; /* Prevents zoom on mobile */
+            min-height: 44px; /* Minimum touch target size */
+            min-width: 44px; /* Minimum touch target size */
+        }
+        
+        /* Add responsive container if needed */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Responsive typography */
+        h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+        h4 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+        p, li { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+        
+        /* Responsive grid system */
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        /* Media queries for different screen sizes */
+        /* Mobile devices */
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            /* Stack elements that should be columns on larger screens */
+            .mobile-stack {
+                flex-direction: column !important;
+            }
+            
+            /* Hide elements that shouldn't appear on mobile */
+            .hide-on-mobile {
+                display: none !important;
+            }
+        }
+        
+        /* Tablet devices */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .hide-on-tablet {
+                display: none !important;
+            }
+        }
+        
+        /* Desktop devices */
+        @media (min-width: 1025px) {
+            .hide-on-desktop {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    ```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurboTax Live</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="turbotax-logo">
+                <span class="logo-icon">✓</span>
+                turbotax<span class="live-tag">LIVE</span>
+            </div>
+        </div>
+        <div class="relative">
+            <span class="synthesized-badge">synthesized content</span>
+        </div>
+        <div class="sidebar-links mt-auto absolute bottom-0 w-full pb-4">
+            <a href="#" class="sidebar-link">Intuit Account</a>
+            <a href="#" class="sidebar-link">Cambiar a español</a>
+            <a href="#" class="sidebar-link">Sign Out</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="flex items-center">
+                <button class="mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                </button>
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="mt-8">
+            <h1 class="form-heading">First, let's get to know you...</h1>
+            <p class="form-subheading">We just need a few details to get rolling.</p>
+
+            <form>
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label class="form-label">First name</label>
+                            <div class="relative">
+                                <input type="text" class="form-input" />
+                                <div class="absolute right-3 top-1/2 transform -translate-y-1/2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label class="form-label">Last name</label>
+                            <input type="text" class="form-input" />
+                            <p class="form-hint">Enter the last name from your Social Security card</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Date of birth
+                                <span class="info-icon">i</span>
+                            </label>
+                            <input type="text" class="form-input" placeholder="mm/dd/yyyy" />
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label class="form-label">
+                                ZIP code
+                                <span class="info-icon">i</span>
+                            </label>
+                            <input type="text" class="form-input" />
+                        </div>
+                        <div class="form-group">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 h-5 w-5 border-gray-300 rounded" />
+                                I live outside the U.S.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="live-help">
+        <div class="relative">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Live Help Agent" class="help-avatar">
+            <span class="help-label">Live Help</span>
+        </div>
+    </div>
+</body>
+</html>
+```
+</body>
+</html>

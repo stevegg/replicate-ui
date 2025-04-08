@@ -1,0 +1,189 @@
+
+        :root {
+            --sidebar-dark: #2d3136;
+            --turbo-red: #d52b1e;
+            --link-blue: #0077c5;
+            --light-gray: #f7f7f7;
+            --dark-text: #333333;
+            --helper-text: #767676;
+            --live-help-red: #c6271a;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--dark-text);
+        }
+        
+        .sidebar {
+            background-color: var(--sidebar-dark);
+            min-height: 100vh;
+            width: 100%;
+        }
+        
+        .logo-container {
+            padding: 1.5rem 1rem;
+        }
+        
+        .turbo-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .turbo-checkmark {
+            background-color: var(--turbo-red);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.5rem;
+        }
+        
+        .logo-text {
+            color: white;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        
+        .live-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.1rem 0.3rem;
+            border-radius: 2px;
+            font-size: 0.6rem;
+            margin-left: 0.25rem;
+            font-weight: 600;
+        }
+        
+        .main-content {
+            padding: 3rem 2rem;
+        }
+        
+        .heading {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .subheading {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 1rem;
+        }
+        
+        .helper-text {
+            color: var(--helper-text);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            font-style: italic;
+        }
+        
+        .info-icon {
+            color: var(--link-blue);
+            cursor: pointer;
+            margin-left: 0.25rem;
+        }
+        
+        .bottom-sidebar {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            max-width: 232px;
+        }
+        
+        .sidebar-item {
+            color: white;
+            padding: 1rem;
+            cursor: pointer;
+        }
+        
+        .sidebar-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 0.5rem 0;
+        }
+        
+        .live-help {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .live-help-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .live-help-badge {
+            background-color: var(--live-help-red);
+            color: white;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .menu-item {
+            padding: 0.75rem 1rem;
+            color: white;
+        }
+        
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .form-row {
+                flex-direction: row;
+            }
+            
+            .form-column {
+                flex: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                min-height: auto;
+            }
+            
+            .bottom-sidebar {
+                position: relative;
+                max-width: 100%;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+        }
+    

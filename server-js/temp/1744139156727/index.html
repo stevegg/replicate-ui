@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Replication</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Base responsive styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Define base font sizes for different screen sizes */
+            font-size: 16px;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Ensure all images are responsive */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Removes bottom spacing */
+        }
+        
+        /* Ensure inputs and buttons are touch-friendly */
+        input, button, select, textarea, a {
+            font-size: 16px; /* Prevents zoom on mobile */
+            min-height: 44px; /* Minimum touch target size */
+            min-width: 44px; /* Minimum touch target size */
+        }
+        
+        /* Add responsive container if needed */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Responsive typography */
+        h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+        h4 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+        p, li { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+        
+        /* Responsive grid system */
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        /* Media queries for different screen sizes */
+        /* Mobile devices */
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            /* Stack elements that should be columns on larger screens */
+            .mobile-stack {
+                flex-direction: column !important;
+            }
+            
+            /* Hide elements that shouldn't appear on mobile */
+            .hide-on-mobile {
+                display: none !important;
+            }
+        }
+        
+        /* Tablet devices */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .hide-on-tablet {
+                display: none !important;
+            }
+        }
+        
+        /* Desktop devices */
+        @media (min-width: 1025px) {
+            .hide-on-desktop {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    ```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurboTax</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+</head>
+<body class="flex flex-col md:flex-row">
+    <div class="sidebar md:w-60 w-full">
+        <div class="logo-container">
+            <div class="turbo-logo">
+                <div class="turbo-checkmark">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18" height="18">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                </div>
+                <span class="logo-text">turbotax</span>
+                <span class="live-badge">LIVE</span>
+            </div>
+        </div>
+        
+        <div class="bottom-sidebar">
+            <div class="menu-item">Intuit Account</div>
+            <div class="sidebar-divider"></div>
+            <div class="menu-item">Cambiar a español</div>
+            <div class="sidebar-divider"></div>
+            <div class="menu-item">Sign Out</div>
+        </div>
+    </div>
+    
+    <div class="flex-1">
+        <header class="flex justify-end items-center border-b p-4">
+            <div class="notification-icon mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+            </div>
+            <div class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <h1 class="heading">First, let's get to know you...</h1>
+            <p class="subheading">We just need a few details to get rolling.</p>
+            
+            <form>
+                <div class="form-row">
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">First name</label>
+                            <div class="relative">
+                                <input type="text" id="firstName" class="form-input" />
+                                <span class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="16" height="16">
+                                        <circle cx="12" cy="12" r="10" fill="none" stroke="#333" stroke-width="2"/>
+                                        <path d="M11 11h2v6h-2z"/>
+                                        <circle cx="12" cy="7.5" r="1.5"/>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Last name</label>
+                            <input type="text" id="lastName" class="form-input" />
+                            <p class="helper-text">Enter the last name from your Social Security card</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="birthDate" class="form-label">
+                                Date of birth
+                                <span class="info-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077c5" width="16" height="16">
+                                        <circle cx="12" cy="12" r="10" fill="none" stroke="#0077c5" stroke-width="2"/>
+                                        <path d="M11 11h2v6h-2z"/>
+                                        <circle cx="12" cy="7.5" r="1.5"/>
+                                    </svg>
+                                </span>
+                            </label>
+                            <input type="text" id="birthDate" class="form-input" placeholder="mm/dd/yyyy" />
+                        </div>
+                    </div>
+                    
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="zipCode" class="form-label">
+                                ZIP code
+                                <span class="info-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077c5" width="16" height="16">
+                                        <circle cx="12" cy="12" r="10" fill="none" stroke="#0077c5" stroke-width="2"/>
+                                        <path d="M11 11h2v6h-2z"/>
+                                        <circle cx="12" cy="7.5" r="1.5"/>
+                                    </svg>
+                                </span>
+                            </label>
+                            <input type="text" id="zipCode" class="form-input" />
+                            
+                            <div class="mt-3">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="mr-2 h-4 w-4" />
+                                    <span>I live outside the U.S.</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+    
+    <div class="live-help">
+        <div class="relative">
+            <div class="live-help-avatar">
+                <img src="https://randomuser.me/api/portraits/women/75.jpg" alt="Live help agent" class="w-full h-full object-cover" />
+            </div>
+            <div class="live-help-badge">Live Help</div>
+        </div>
+    </div>
+</body>
+</html>
+```
+</body>
+</html>

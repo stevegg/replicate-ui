@@ -1,0 +1,94 @@
+
+        :root {
+            --sidebar-bg: #2d3136;
+            --red-logo: #e74c3c;
+            --input-border: #c0c0c0;
+            --help-button-bg: #e74c3c;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        
+        .sidebar {
+            background-color: var(--sidebar-bg);
+            width: 232px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        
+        .main-content {
+            margin-left: 232px;
+        }
+        
+        .logo-circle {
+            background-color: var(--red-logo);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .form-input {
+            border: 1px solid var(--input-border);
+            border-radius: 4px;
+            padding: 0.75rem;
+            width: 100%;
+            font-size: 1rem;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #0077cc;
+        }
+        
+        .help-button {
+            background-color: var(--help-button-bg);
+            color: white;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+        }
+        
+        .info-icon {
+            color: #888;
+            cursor: pointer;
+            font-size: 1.25rem;
+        }
+        
+        .helper-text {
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 200px;
+            }
+            .main-content {
+                margin-left: 200px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+            .form-container {
+                padding: 1rem;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    

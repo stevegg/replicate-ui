@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Replication</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Base responsive styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Define base font sizes for different screen sizes */
+            font-size: 16px;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Ensure all images are responsive */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Removes bottom spacing */
+        }
+        
+        /* Ensure inputs and buttons are touch-friendly */
+        input, button, select, textarea, a {
+            font-size: 16px; /* Prevents zoom on mobile */
+            min-height: 44px; /* Minimum touch target size */
+            min-width: 44px; /* Minimum touch target size */
+        }
+        
+        /* Add responsive container if needed */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Responsive typography */
+        h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+        h4 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+        p, li { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+        
+        /* Responsive grid system */
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        /* Media queries for different screen sizes */
+        /* Mobile devices */
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            /* Stack elements that should be columns on larger screens */
+            .mobile-stack {
+                flex-direction: column !important;
+            }
+            
+            /* Hide elements that shouldn't appear on mobile */
+            .hide-on-mobile {
+                display: none !important;
+            }
+        }
+        
+        /* Tablet devices */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .hide-on-tablet {
+                display: none !important;
+            }
+        }
+        
+        /* Desktop devices */
+        @media (min-width: 1025px) {
+            .hide-on-desktop {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    ```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurboTax - Get to know you</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="synthesized-tag">synthesized content</div>
+    
+    <div class="sidebar">
+        <div class="turbotax-logo p-4">
+            <div class="turbo-circle">
+                <span class="checkmark">✓</span>
+            </div>
+            <span class="font-bold text-white">turbotax</span>
+            <span class="text-white ml-1 text-xs px-1 border border-white">LIVE</span>
+        </div>
+        
+        <div class="mt-auto absolute bottom-0 w-full">
+            <a href="#" class="sidebar-link">Intuit Account</a>
+            <a href="#" class="sidebar-link">Cambiar a español</a>
+            <a href="#" class="sidebar-link">Sign Out</a>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <button class="mx-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                </svg>
+            </button>
+            <button class="mx-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </button>
+        </div>
+        
+        <div class="content-area">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">First, let's get to know you...</h1>
+            <p class="text-gray-700 mb-6">We just need a few details to get rolling.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-gray-700 mb-2">First name</label>
+                    <div class="relative">
+                        <input type="text" class="input-field" />
+                        <span class="dropdown-arrow">▼</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 mb-2">Last name</label>
+                    <input type="text" class="input-field" />
+                    <p class="helper-text">Enter the last name from your Social Security card</p>
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 mb-2">
+                        Date of birth 
+                        <span class="info-icon ml-1">i</span>
+                    </label>
+                    <input type="text" class="input-field" placeholder="mm/dd/yyyy" />
+                    <p class="helper-text">mm/dd/yyyy</p>
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 mb-2">
+                        ZIP code 
+                        <span class="info-icon ml-1">i</span>
+                    </label>
+                    <input type="text" class="input-field" />
+                    
+                    <div class="mt-4">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="h-5 w-5 text-blue-600 border-gray-300 rounded mr-2">
+                            <span class="text-gray-700">I live outside the U.S.</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="live-help-bubble">
+        <img src="https://via.placeholder.com/60" alt="Support Agent" class="rounded-full" />
+        <span class="live-help-tag">Live Help</span>
+    </div>
+</body>
+</html>
+```
+</body>
+</html>
