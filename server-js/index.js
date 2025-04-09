@@ -26,6 +26,9 @@ if (!fs.existsSync(tempDir)) {
   fs.mkdirSync(tempDir);
 }
 
+// Serve static files from the temp directory
+app.use('/temp', express.static(tempDir));
+
 // Store active generation tasks with their status
 const activeTasks = new Map();
 

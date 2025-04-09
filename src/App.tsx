@@ -201,7 +201,12 @@ function App() {
 
   const handleDownloadZip = () => {
     if (zipDownloadUrl) {
-      window.open(zipDownloadUrl, '_blank');
+      // Extract just the ID and filename from the zipDownloadUrl
+      const pathMatch = zipDownloadUrl.match(/\/download\/([^\/]+)\/([^\/]+)$/);
+      if (pathMatch && pathMatch.length >= 3) {
+        const [, id, filename] = pathMatch;
+        window.open(`http://localhost:3000/temp/${id}/${filename}`, '_blank');
+      }
     }
   };
 
@@ -424,7 +429,14 @@ function App() {
                       <div className="flex gap-2">
                         {zipDownloadUrl && (
                           <a
-                            href={`http://localhost:3001${zipDownloadUrl}`}
+                            href={(() => {
+                              const pathMatch = zipDownloadUrl.match(/\/download\/([^\/]+)\/([^\/]+)$/);
+                              if (pathMatch && pathMatch.length >= 3) {
+                                const [, id, filename] = pathMatch;
+                                return `http://localhost:3000/temp/${id}/${filename}`;
+                              }
+                              return '#';
+                            })()}
                             download
                             className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md"
                           >

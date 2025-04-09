@@ -1,0 +1,98 @@
+
+        :root {
+            --dark-gray: #333639;
+            --light-gray: #F5F5F5;
+            --red: #E33629;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            background-color: var(--dark-gray);
+            color: white;
+            min-height: 100vh;
+            width: 186px;
+        }
+        .logo-container {
+            padding: 1.5rem 1rem;
+        }
+        .logo-circle {
+            background-color: var(--red);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content {
+            background-color: white;
+            min-height: 100vh;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .input-field {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 0.75rem;
+            width: 100%;
+        }
+        .help-icon {
+            color: #777;
+            cursor: pointer;
+        }
+        .live-help-button {
+            background-color: var(--red);
+            color: white;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            overflow: hidden;
+        }
+        .live-help-tag {
+            background-color: var(--red);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+        }
+        .dropdown-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .header {
+            border-bottom: 1px solid #eaeaea;
+            padding: 1rem;
+        }
+        .sidebar-menu-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+        }
+        .sidebar-menu-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .synthesized-content {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            position: absolute;
+            left: 175px;
+            top: 384px;
+        }
+    
