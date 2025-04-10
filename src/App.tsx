@@ -245,7 +245,7 @@ function App() {
       formData.append('model', model);
 
       // Send request to server
-      const response = await fetch('http://localhost:3001/analyze-and-refine', {
+      const response = await fetch('http://localhost:3000/analyze-and-refine', {
         method: 'POST',
         headers: {
           'x-api-key': apiKey,
@@ -264,7 +264,7 @@ function App() {
       
       // Poll for task status
       const intervalId = setInterval(async () => {
-        const statusResponse = await fetch(`http://localhost:3001/task-status/${data.taskId}`);
+        const statusResponse = await fetch(`http://localhost:3000/task-status/${data.taskId}`);
         const statusData = await statusResponse.json();
         
         setTaskStatus(statusData.status);
